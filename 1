@@ -1,0 +1,126 @@
+#include<stdio.h>
+
+
+void div(int a, int b)
+{
+    int yushu, shang;
+    shang = a / b;
+    yushu = a - shang * b;
+    printf("%d/%d=%d    余数为：%d\n", a, b, shang, yushu);
+}
+int jisuan(int a,char ch,int b)
+{
+    int c = 0;
+    switch (ch)
+    {
+    case '+':
+        c = a + b;
+        printf("%d+%d=%d\n", a, b, c);
+        break;
+    case '-':
+        c = a - b;
+        printf("%d-%d=%d\n", a, b, c);
+        break;
+    case '*':
+        c = a * b;
+        printf("%d*%d=%d\n", a, b, c);
+        break;
+    case '/':
+        div(a, b);
+        c = a / b;
+        break;
+    }
+    return c;
+}
+void xunhuan(int c)
+{
+    int i=1,j;
+    char x='0',q;
+    printf("如果需要进行下一步计算，请输入需要计算的数及运算符；格式如:' + 6'\n",c);
+    printf("如果停止计算，请输入'.0'\n");
+    while (i==1)
+    { 
+            scanf("%c%c%d",&q, &x, &j);
+            if (x=='.')
+            {   i = 0;
+                printf("感谢使用");
+            }
+            else
+            {
+                c = jisuan(c, x, j);
+            }
+    }
+}
+
+int main()
+{
+  
+    int i, a, b, c;
+    char ch;
+    a = 0;
+    b = 0;
+    ch = '0';
+    printf("欢迎使用本计算器 \n");
+    printf("请输入需要运行的功能的代码： \n");
+    printf("代码1：简单四则运算 \n");
+    printf("代码2：十进制转R进制 \n");
+    printf("代码3：退出本计算器 \n");
+    scanf("%d", &i);
+    if (i == 1)
+    {
+        printf("请输入需要计算的数及运算符；格式如:'52 + 36' \n");
+        scanf("%d%c%d", &a, &ch, &b);
+
+
+        while ((ch != '+') && (ch != '-') && (ch != '*') && (ch != '/'))
+        {
+            printf("输入运算符有误，请重新输入运算符:\n");
+            scanf("%c", &ch);
+        }
+
+
+        if ((ch == '/') && (b == 0))
+        {
+            printf("除数不能为0，请重新输入除数:\n");
+            scanf("%d", &b);
+        }
+        c=jisuan(a,ch,b);
+        xunhuan(c);
+
+    }
+    if (i == 2)
+    {
+        int i = 0, n, m;
+        printf("请输入一个十进制数：\n");
+        scanf("%i", &m);
+        printf("请输入进制R：\n");
+        scanf("%i", &n);
+
+        int a[100];
+        while (m)
+        {
+            a[i] = m % n;
+            m = m / n;
+            i++;
+        }
+        for (i = i - 1; i >= 0; i--)
+        {
+            if (a[i] == 10)
+                printf("A");
+            if (a[i] == 11)
+                printf("B");
+            if (a[i] == 12)
+                printf("C");
+            if (a[i] == 13)
+                printf("D");
+            if (a[i] == 14)
+                printf("E");
+            if (a[i] == 15)
+                printf("F");
+            if (a[i] != 10 && a[i] != 11 && a[i] != 12 && a[i] != 13 && a[i] != 14 && a[i] != 15)
+                printf("%d", a[i]);
+        }
+
+    }
+    return 0;
+}
