@@ -9,30 +9,32 @@ namespace UnitTest1
     public:
         TEST_METHOD(TestMethod1)
         {
+            int yunsuanfu[5];
             int start = 1;//运行程序
             int num = 20;//题目的数量
             int max = 100;//题目中的最大数
             int yinzinum = 6;//因子的最大数量
             int zorx = 1;//是否为整数运算，1为整数，2为小数
-            int yunsuanfu[0] = 1;//加法（1为需要，0为不需要）
-            int yunsuanfu[1] = 1;//减法
-            int yunsuanfu[2] = 1;//乘法
-            int yunsuanfu[3] = 1;//除法
+            yunsuanfu[0] = 1;//加法（1为需要，0为不需要）
+            yunsuanfu[1] = 1;//减法
+            yunsuanfu[2] = 1;//乘法
+            yunsuanfu[3] = 1;//除法
             int kuohao = 1;//是否含有括号
             int wenjian = 2;//文件输出
             Assert::AreEqual(i, num);   
         }
         TEST_METHOD(TestMethod2)
         {
+            int yunsuanfu[5];
             int start = 1;//运行程序
             int num = 30;//题目的数量
             int max = 50;//题目中的最大数
             int yinzinum = 4;//因子的最大数量
             int zorx = 2;//是否为整数运算，1为整数，2为小数
-            int yunsuanfu[0] = 1;//加法（1为需要，0为不需要）
-            int yunsuanfu[1] = 1;//减法
-            int yunsuanfu[2] = 1;//乘法
-            int yunsuanfu[3] = 1;//除法
+            yunsuanfu[0] = 1;//加法（1为需要，0为不需要）
+            yunsuanfu[1] = 1;//减法
+            yunsuanfu[2] = 1;//乘法
+            yunsuanfu[3] = 1;//除法
             int kuohao = 2;//是否含有括号
             int wenjian = 1;//文件输出
             Assert::AreEqual(i, num);
